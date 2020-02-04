@@ -159,6 +159,7 @@ def turn(p, c):
             if c.hp > 0:
                 c.hp = c.hp - damage(p, c, cSpell)
 
+#Inicia a batalha entre jogador e computador
 def battle(p, c):
     print(p.name," VS ", c.name)
     turnCount = 1
@@ -169,9 +170,15 @@ def battle(p, c):
         turn(p, c)
         print("\n")
         turnCount += 1
-    
 
-def start():
+        if c.hp <= 0:
+            print(p.name," Wins")
+
+        if p.hp <= 0:
+            print(c.name," Wins")
+    
+#main
+def run():
     p = characterSelection()
     c = computerSelection(p)
     battle(p, c)

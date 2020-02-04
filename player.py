@@ -1,4 +1,5 @@
 class Player:
+    #construtor
     def __init__(self, name, hp, mp, atack, defense, speed, criticalDamage, spells):
         self.name = name
         self.hp = hp
@@ -9,12 +10,14 @@ class Player:
         self.criticalDamage = criticalDamage
         self.spells = []
     
+    #adiciona spell para a lista spells
     def addSpellSet(self, basicAtack, spell_0, spell_1, spell_2):
         self.spells.append(basicAtack)
         self.spells.append(spell_0)
         self.spells.append(spell_1)
         self.spells.append(spell_2)
     
+    #imprime a lista spells
     def printSpellSet(self):
         for i in range (len(self.spells)):
             print("        _________________________________\n",
@@ -23,6 +26,7 @@ class Player:
                   "       |      COST  : ", self.spells[i].cost, " MP","\n",
                   "       _________________________________")
     
+    #imprime os atributos da classe player
     def printPlayerStats(self):
         print("_____________________\n",
               "NAME  : ", self.name, "\n",
