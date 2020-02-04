@@ -1,11 +1,12 @@
 class Player:
-    def __init__(self, name, hp, mp, atack, defense, speed, spells):
+    def __init__(self, name, hp, mp, atack, defense, speed, criticalDamage, spells):
         self.name = name
         self.hp = hp
         self.mp = mp
         self.atack = atack
         self.defense = defense
         self.speed = speed
+        self.criticalDamage = criticalDamage
         self.spells = []
     
     def addSpellSet(self, basicAtack, spell_0, spell_1, spell_2):
@@ -23,13 +24,11 @@ class Player:
                   "       _________________________________")
     
     def printPlayerStats(self):
-        print("_________________________________________\n",
+        print("_____________________\n",
               "NAME  : ", self.name, "\n",
               "HP    : ", self.hp, "\n",
               "MP    : ", self.mp, "\n",
               "ATK   : ", self.atack, "\n",
               "DEF   : ", self.defense, "\n",
-              "SPD   : ", self.speed, "\n",
-              "SPELLS:")
-        self.printSpellSet()
-        print("_________________________________________\n")
+              "SPD   : ", self.speed)
+        print("_____________________\n")
